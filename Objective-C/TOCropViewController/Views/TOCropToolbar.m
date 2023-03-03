@@ -72,12 +72,13 @@
     
     _doneTextButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_doneTextButton setTitle: _doneTextButtonTitle ?
-        _doneTextButtonTitle : NSLocalizedStringFromTableInBundle(@"Save",
-																  @"TOCropViewControllerLocalizable",
-																  resourceBundle,
+        _doneTextButtonTitle : NSLocalizedStringFromTableInBundle(@"✓ Save",
+                                                                  @"TOCropViewControllerLocalizable",
+                                                                  resourceBundle,
                                                                   nil)
                      forState:UIControlStateNormal];
-    [_doneTextButton setTitleColor:[UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f] forState:UIControlStateNormal];
+    [_doneTextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    _doneTextButton.backgroundColor = [UIColor colorWithRed:67.0f/255.0f green:11.0f/255.0f blue:224.0f/255.0f alpha:1.0f];
     if (@available(iOS 13.0, *)) {
         [_doneTextButton.titleLabel setFont:[UIFont systemFontOfSize:17.0f weight:UIFontWeightMedium]];
     } else {
@@ -105,6 +106,7 @@
                                                                     nil)
                        forState:UIControlStateNormal];
     [_cancelTextButton setTitleColor:[UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f] forState:UIControlStateNormal];
+    _cancelTextButton.backgroundColor = [UIColor whiteColor];
     [_cancelTextButton.titleLabel setFont:[UIFont systemFontOfSize:17.0f]];
     [_cancelTextButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [_cancelTextButton sizeToFit];
@@ -115,38 +117,38 @@
     [_cancelIconButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_cancelIconButton];
     
-//    _clampButton = [UIButton buttonWithType:UIButtonTypeSystem];
-//    _clampButton.contentMode = UIViewContentModeCenter;
-//    _clampButton.tintColor = [UIColor whiteColor];
-//    [_clampButton setImage:[TOCropToolbar clampImage] forState:UIControlStateNormal];
-//    [_clampButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:_clampButton];
-//    
-//    _rotateCounterclockwiseButton = [UIButton buttonWithType:UIButtonTypeSystem];
-//    _rotateCounterclockwiseButton.contentMode = UIViewContentModeCenter;
-//    _rotateCounterclockwiseButton.tintColor = [UIColor whiteColor];
-//    [_rotateCounterclockwiseButton setImage:[TOCropToolbar rotateCCWImage] forState:UIControlStateNormal];
-//    [_rotateCounterclockwiseButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:_rotateCounterclockwiseButton];
-//    
-//    _rotateClockwiseButton = [UIButton buttonWithType:UIButtonTypeSystem];
-//    _rotateClockwiseButton.contentMode = UIViewContentModeCenter;
-//    _rotateClockwiseButton.tintColor = [UIColor whiteColor];
-//    [_rotateClockwiseButton setImage:[TOCropToolbar rotateCWImage] forState:UIControlStateNormal];
-//    [_rotateClockwiseButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:_rotateClockwiseButton];
-//    
-//    _resetButton = [UIButton buttonWithType:UIButtonTypeSystem];
-//    _resetButton.contentMode = UIViewContentModeCenter;
-//    _resetButton.tintColor = [UIColor whiteColor];
-//    _resetButton.enabled = NO;
-//    [_resetButton setImage:[TOCropToolbar resetImage] forState:UIControlStateNormal];
-//    [_resetButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-//    _resetButton.accessibilityLabel = NSLocalizedStringFromTableInBundle(@"Reset",
-//                                                                         @"TOCropViewControllerLocalizable",
-//                                                                         resourceBundle,
-//                                                                         nil);
-//    [self addSubview:_resetButton];
+    _clampButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    _clampButton.contentMode = UIViewContentModeCenter;
+    _clampButton.tintColor = [UIColor whiteColor];
+    [_clampButton setImage:[TOCropToolbar clampImage] forState:UIControlStateNormal];
+    [_clampButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_clampButton];
+    
+    _rotateCounterclockwiseButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    _rotateCounterclockwiseButton.contentMode = UIViewContentModeCenter;
+    _rotateCounterclockwiseButton.tintColor = [UIColor whiteColor];
+    [_rotateCounterclockwiseButton setImage:[TOCropToolbar rotateCCWImage] forState:UIControlStateNormal];
+    [_rotateCounterclockwiseButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_rotateCounterclockwiseButton];
+    
+    _rotateClockwiseButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    _rotateClockwiseButton.contentMode = UIViewContentModeCenter;
+    _rotateClockwiseButton.tintColor = [UIColor whiteColor];
+    [_rotateClockwiseButton setImage:[TOCropToolbar rotateCWImage] forState:UIControlStateNormal];
+    [_rotateClockwiseButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_rotateClockwiseButton];
+    
+    _resetButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    _resetButton.contentMode = UIViewContentModeCenter;
+    _resetButton.tintColor = [UIColor whiteColor];
+    _resetButton.enabled = NO;
+    [_resetButton setImage:[TOCropToolbar resetImage] forState:UIControlStateNormal];
+    [_resetButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    _resetButton.accessibilityLabel = NSLocalizedStringFromTableInBundle(@"Reset",
+                                                                         @"TOCropViewControllerLocalizable",
+                                                                         resourceBundle,
+                                                                         nil);
+    [self addSubview:_resetButton];
 }
 
 - (void)layoutSubviews
