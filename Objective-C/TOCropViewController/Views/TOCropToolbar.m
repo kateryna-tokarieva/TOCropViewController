@@ -193,7 +193,7 @@
         // Work out the cancel button frame
         CGRect frame = CGRectZero;
         frame.size.height = 44.0f;
-        frame.size.width = self.frame.size.width / 3.0;
+        frame.size.width = self.frame.size.width / 3.3;
 
         //If normal layout, place on the left side, else place on the right
         if (self.reverseContentLayout == NO) {
@@ -205,7 +205,7 @@
         (_showOnlyIcons ? self.cancelIconButton : self.cancelTextButton).frame = frame;
         
         // Work out the Done button frame
-        frame.size.width = self.frame.size.width / 3.0;
+        frame.size.width = self.frame.size.width / 3.3;
         
         if (self.reverseContentLayout == NO) {
             frame.origin.x = boundsSize.width - (frame.size.width + insetPadding);
