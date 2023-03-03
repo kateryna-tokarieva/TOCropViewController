@@ -95,7 +95,7 @@
     [self addSubview:_doneIconButton];
 
     // Set the default color for the done buttons
-    self.doneButtonColor = nil;
+    self.doneButtonColor = [UIColor whiteColor];
 
     _cancelTextButton = [UIButton buttonWithType:UIButtonTypeSystem];
     
