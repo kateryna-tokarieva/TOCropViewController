@@ -85,6 +85,8 @@
         [_doneTextButton.titleLabel setFont:[UIFont systemFontOfSize:17.0f]];
     }
     [_doneTextButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    _doneTextButton.layer.cornerRadius = 3;
+
     [_doneTextButton sizeToFit];
     [self addSubview:_doneTextButton];
     
@@ -109,6 +111,9 @@
     _cancelTextButton.backgroundColor = [UIColor whiteColor];
     [_cancelTextButton.titleLabel setFont:[UIFont systemFontOfSize:17.0f]];
     [_cancelTextButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    _cancelTextButton.layer.cornerRadius = 3;
+    _cancelTextButton.layer.borderWidth = 1;
+    _cancelTextButton.layer.borderColor = [UIColor colorWithRed:0.261 green:0.044 blue:0.879 alpha:1].CGColor;
     [_cancelTextButton sizeToFit];
     [self addSubview:_cancelTextButton];
     
