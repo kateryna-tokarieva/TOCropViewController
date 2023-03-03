@@ -227,9 +227,8 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
      Default is false.
      */
     public var rotateClockwiseButtonHidden: Bool {
-//        set { toCropViewController.rotateClockwiseButtonHidden = newValue }
-//        get { return toCropViewController.rotateClockwiseButtonHidden }
-        true
+        set { toCropViewController.rotateClockwiseButtonHidden = newValue }
+        get { return toCropViewController.rotateClockwiseButtonHidden }
     }
     
     /**
@@ -239,9 +238,8 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
      Default is false.
      */
     public var rotateButtonsHidden: Bool {
-//        set { toCropViewController.rotateButtonsHidden = newValue }
-//        get { return toCropViewController.rotateButtonsHidden }
-        true
+        set { toCropViewController.rotateButtonsHidden = newValue }
+        get { return toCropViewController.rotateButtonsHidden }
     }
     /**
      When enabled, hides the 'Reset' button on the toolbar.
@@ -249,9 +247,8 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
      Default is false.
      */
     public var resetButtonHidden: Bool {
-//        set { toCropViewController.resetButtonHidden = newValue }
-//        get { return toCropViewController.resetButtonHidden }
-        true
+        set { toCropViewController.resetButtonHidden = newValue }
+        get { return toCropViewController.resetButtonHidden }
     }
     
     /**
@@ -260,9 +257,8 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
      Default is false.
      */
     public var aspectRatioPickerButtonHidden: Bool {
-//        set { toCropViewController.aspectRatioPickerButtonHidden = newValue }
-//        get { return toCropViewController.aspectRatioPickerButtonHidden }
-        true
+        set { toCropViewController.aspectRatioPickerButtonHidden = newValue }
+        get { return toCropViewController.aspectRatioPickerButtonHidden }
     }
     
     /**
