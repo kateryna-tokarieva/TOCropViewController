@@ -227,8 +227,9 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
      Default is false.
      */
     public var rotateClockwiseButtonHidden: Bool {
-        set { toCropViewController.rotateClockwiseButtonHidden = newValue }
-        get { return toCropViewController.rotateClockwiseButtonHidden }
+//        set { toCropViewController.rotateClockwiseButtonHidden = newValue }
+//        get { return toCropViewController.rotateClockwiseButtonHidden }
+        true
     }
     
     /**
@@ -238,8 +239,9 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
      Default is false.
      */
     public var rotateButtonsHidden: Bool {
-        set { toCropViewController.rotateButtonsHidden = newValue }
-        get { return toCropViewController.rotateButtonsHidden }
+//        set { toCropViewController.rotateButtonsHidden = newValue }
+//        get { return toCropViewController.rotateButtonsHidden }
+        true
     }
     /**
      When enabled, hides the 'Reset' button on the toolbar.
@@ -247,8 +249,9 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
      Default is false.
      */
     public var resetButtonHidden: Bool {
-        set { toCropViewController.resetButtonHidden = newValue }
-        get { return toCropViewController.resetButtonHidden }
+//        set { toCropViewController.resetButtonHidden = newValue }
+//        get { return toCropViewController.resetButtonHidden }
+        true
     }
     
     /**
@@ -257,8 +260,9 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
      Default is false.
      */
     public var aspectRatioPickerButtonHidden: Bool {
-        set { toCropViewController.aspectRatioPickerButtonHidden = newValue }
-        get { return toCropViewController.aspectRatioPickerButtonHidden }
+//        set { toCropViewController.aspectRatioPickerButtonHidden = newValue }
+//        get { return toCropViewController.aspectRatioPickerButtonHidden }
+        true
     }
     
     /**
@@ -423,8 +427,7 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
     Setting this will override the default color.
     */
     public var doneButtonColor: UIColor? {
-        set { toCropViewController.doneButtonColor = newValue }
-        get { return toCropViewController.doneButtonColor }
+       UIColor(red: 67/255, green: 11/255, blue: 224/255, alpha: 1)
     }
     
     /**
@@ -432,8 +435,8 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
     Setting this will override the default color.
     */
     public var cancelButtonColor: UIColor? {
-        set { toCropViewController.cancelButtonColor = newValue }
-        get { return toCropViewController.cancelButtonColor }
+        UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+
     }
     
     /**
