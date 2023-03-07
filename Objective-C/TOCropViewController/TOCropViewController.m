@@ -114,7 +114,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
 
     // Set up view controller properties
     self.transitioningDelegate = self;
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor colorWithRed:246.0f/255.0f green:246.0f/255.0f blue:246.0f/255.0f alpha:1.0f];
 
     
     BOOL circularMode = (self.croppingStyle == TOCropViewCroppingStyleCircular);
@@ -322,13 +322,13 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
         frame.size.height = CGRectGetHeight(bounds);
         frame.size.width = CGRectGetWidth(bounds);
 
-        // Set Y and adjust for height
-        if (self.toolbarPosition == TOCropViewControllerToolbarPositionBottom) {
-            frame.size.height -= (insets.bottom + kTOCropViewControllerToolbarHeight);
-        } else if (self.toolbarPosition == TOCropViewControllerToolbarPositionTop) {
-			frame.origin.y = kTOCropViewControllerToolbarHeight + insets.top;
-            frame.size.height -= frame.origin.y;
-        }
+//        // Set Y and adjust for height
+//        if (self.toolbarPosition == TOCropViewControllerToolbarPositionBottom) {
+//            frame.size.height -= (insets.bottom + kTOCropViewControllerToolbarHeight);
+//        } else if (self.toolbarPosition == TOCropViewControllerToolbarPositionTop) {
+//			frame.origin.y = kTOCropViewControllerToolbarHeight + insets.top;
+//            frame.size.height -= frame.origin.y;
+//        }
     }
     
     return frame;
