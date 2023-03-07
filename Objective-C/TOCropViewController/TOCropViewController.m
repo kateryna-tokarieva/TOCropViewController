@@ -120,8 +120,8 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
     BOOL circularMode = (self.croppingStyle == TOCropViewCroppingStyleCircular);
 
     // Layout the views initially
-    self.toolbar.frame = [self frameForToolbarWithVerticalLayout:self.verticalLayout];
     self.cropView.frame = [self frameForCropViewWithVerticalLayout:self.verticalLayout];
+    self.toolbar.frame = [self frameForToolbarWithVerticalLayout:self.verticalLayout];
 
     // Set up toolbar default behaviour
     self.toolbar.clampButtonHidden = YES;
@@ -143,6 +143,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
 {
     [super viewWillAppear:animated];
     
+    [self.view bringSubviewToFront:self.toolbar];
     // If we're animating onto the screen, set a flag
     // so we can manually control the status bar fade out timing
     if (animated) {
