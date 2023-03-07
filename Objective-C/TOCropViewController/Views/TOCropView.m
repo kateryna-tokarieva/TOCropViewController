@@ -24,7 +24,7 @@
 #import "TOCropOverlayView.h"
 #import "TOCropScrollView.h"
 
-#define TOCROPVIEW_BACKGROUND_COLOR [UIColor clearColor]
+#define TOCROPVIEW_BACKGROUND_COLOR [UIColor colorWithRed:246.0f/255.0f green:246.0f/255.0f blue:246.0f/255.0f alpha:1.0f]
 
 static const CGFloat kTOCropViewPadding = 14.0f;
 static const NSTimeInterval kTOCropTimerDuration = 0.8f;
@@ -137,7 +137,6 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     //View properties
     self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     self.backgroundColor = TOCROPVIEW_BACKGROUND_COLOR;
-    self.backgroundColor = [UIColor greenColor];
     self.cropBoxFrame = CGRectZero;
     self.applyInitialCroppedImageFrame = NO;
     self.editing = NO;
@@ -184,11 +183,11 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     //Grey transparent overlay view
     self.overlayView = [[UIView alloc] initWithFrame:self.bounds];
     self.overlayView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    self.overlayView.backgroundColor = [UIColor clearColor];
+    self.overlayView.backgroundColor = [UIColor colorWithRed:246.0f/255.0f green:246.0f/255.0f blue:246.0f/255.0f alpha:0.35f];
     self.overlayView.hidden = NO;
     self.overlayView.userInteractionEnabled = NO;
     [self addSubview:self.overlayView];
-    
+    /*
     //Translucency View
     if (NSClassFromString(@"UIVisualEffectView")) {
         self.translucencyEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
@@ -205,7 +204,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     self.translucencyView.userInteractionEnabled = NO;
     self.translucencyView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self addSubview:self.translucencyView];
-    
+    */
     // The forground container that holds the foreground image view
     self.foregroundContainerView = [[UIView alloc] initWithFrame:(CGRect){0,0,200,200}];
     self.foregroundContainerView.clipsToBounds = YES;
