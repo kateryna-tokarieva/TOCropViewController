@@ -175,6 +175,11 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
     if (self.aspectRatioPreset != TOCropViewControllerAspectRatioPresetOriginal) {
         [self setAspectRatioPreset:self.aspectRatioPreset animated:NO];
     }
+    
+    self.toolbar.alpha = 0.0;
+    self.toolbar.backgroundColor = [UIColor clearColor];
+    self.toolbar.tintColor = [UIColor clearColor];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
