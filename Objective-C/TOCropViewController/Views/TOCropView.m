@@ -187,7 +187,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     self.overlayView.hidden = NO;
     self.overlayView.userInteractionEnabled = NO;
     [self addSubview:self.overlayView];
-    /*
+    
     //Translucency View
     if (NSClassFromString(@"UIVisualEffectView")) {
         self.translucencyEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
@@ -204,7 +204,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     self.translucencyView.userInteractionEnabled = NO;
     self.translucencyView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self addSubview:self.translucencyView];
-    */
+    
     // The forground container that holds the foreground image view
     self.foregroundContainerView = [[UIView alloc] initWithFrame:(CGRect){0,0,200,200}];
     self.foregroundContainerView.clipsToBounds = YES;
