@@ -56,7 +56,7 @@
 
 - (void)setup {
     self.backgroundView = [[UIView alloc] initWithFrame:self.bounds];
-    self.backgroundView.backgroundColor = [UIColor colorWithRed:246.0f/255.0f green:246.0f/255.0f blue:246.0f/255.0f alpha:1.0f];
+    self.backgroundView.backgroundColor = [UIColor colorWithRed:246.0f/255.0f green:246.0f/255.0f blue:246.0f/255.0f alpha:0.0f];
     [self addSubview:self.backgroundView];
     
     // On iOS 9, we can use the new layout features to determine whether we're in an 'Arabic' style language mode
@@ -92,7 +92,7 @@
     
     _doneIconButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_doneIconButton setImage:[TOCropToolbar doneImage] forState:UIControlStateNormal];
-    [_doneIconButton setTintColor:[UIColor whiteColor]];
+    [_doneIconButton setTintColor:[UIColor colorWithRed:67.0f/255.0f green:11.0f/255.0f blue:224.0f/255.0f alpha:1.0f]];
     [_doneIconButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_doneIconButton];
 
@@ -107,7 +107,7 @@
 																	resourceBundle,
                                                                     nil)
                        forState:UIControlStateNormal];
-    [_cancelTextButton setTitleColor:[UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:1.0f] forState:UIControlStateNormal];
+    [_cancelTextButton setTitleColor:[UIColor colorWithRed:67.0f/255.0f green:11.0f/255.0f blue:224.0f/255.0f alpha:1.0f] forState:UIControlStateNormal];
     _cancelTextButton.backgroundColor = [UIColor whiteColor];
     [_cancelTextButton.titleLabel setFont:[UIFont systemFontOfSize:17.0f]];
     [_cancelTextButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
@@ -119,6 +119,7 @@
     
     _cancelIconButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_cancelIconButton setImage:[TOCropToolbar cancelImage] forState:UIControlStateNormal];
+    [_cancelIconButton setTintColor:[UIColor colorWithRed:67.0f/255.0f green:11.0f/255.0f blue:224.0f/255.0f alpha:1.0f]];
     [_cancelIconButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_cancelIconButton];
     
@@ -192,7 +193,7 @@
         
         // Work out the cancel button frame
         CGRect frame = CGRectZero;
-        frame.size.height = 44.0f;
+        frame.size.height = 32.0f;
         frame.size.width = self.frame.size.width / 2.5;
 
         //If normal layout, place on the left side, else place on the right
@@ -256,7 +257,7 @@
         CGRect frame = CGRectZero;
         frame.size.height = 44.0f;
         frame.size.width = 44.0f;
-        frame.origin.y = CGRectGetHeight(self.bounds) - 44.0f;
+        frame.origin.y = CGRectGetHeight(self.bounds) - 32.0f;
         self.cancelIconButton.frame = frame;
         
         frame.origin.y = self.statusBarHeightInset;
@@ -264,7 +265,8 @@
         frame.size.height = 44.0f;
         self.doneIconButton.frame = frame;
         
-        CGRect containerRect = (CGRect){0,CGRectGetMaxY(self.doneIconButton.frame),44.0f,CGRectGetMinY(self.cancelIconButton.frame)-CGRectGetMaxY(self.doneIconButton.frame)};
+        CGRect containerRect = (CGRect){0, CGRectGetMaxY(self.doneIconButton.frame), 44.0f, CGRectGetMinY(self.cancelIconButton.frame) - CGRectGetMaxY(self.doneIconButton.frame) - 32.0f};
+
         
 #if TOCROPTOOLBAR_DEBUG_SHOWING_BUTTONS_CONTAINER_RECT
         containerView.frame = containerRect;
