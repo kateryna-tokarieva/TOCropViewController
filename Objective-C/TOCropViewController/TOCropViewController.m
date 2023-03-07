@@ -120,8 +120,8 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
     BOOL circularMode = (self.croppingStyle == TOCropViewCroppingStyleCircular);
 
     // Layout the views initially
-    self.cropView.frame = [self frameForCropViewWithVerticalLayout:self.verticalLayout];
     self.toolbar.frame = [self frameForToolbarWithVerticalLayout:self.verticalLayout];
+    self.cropView.frame = [self frameForCropViewWithVerticalLayout:self.verticalLayout];
 
     // Set up toolbar default behaviour
     self.toolbar.clampButtonHidden = YES;
