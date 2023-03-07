@@ -423,16 +423,17 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
     Setting this will override the default color.
     */
     public var doneButtonColor: UIColor? {
-       UIColor(red: 67/255, green: 11/255, blue: 224/255, alpha: 1)
+        set { toCropViewController.doneButtonColor = newValue }
+        get { return toCropViewController.doneButtonColor }
     }
     
     /**
-    Color for the 'Cancel' button.
-    Setting this will override the default color.
-    */
+     Color for the 'Cancel' button.
+     Setting this will override the default color.
+     */
     public var cancelButtonColor: UIColor? {
-        UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-
+        set { toCropViewController.cancelButtonColor = newValue }
+        get { return toCropViewController.cancelButtonColor }
     }
     
     /**
